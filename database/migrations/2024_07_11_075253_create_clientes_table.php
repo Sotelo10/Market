@@ -12,14 +12,13 @@ return new class extends Migration
     {
         Schema::create('clientes', function (Blueprint $table) {
             $table->id();
-            $table->string('nombres');
-            $table->string('apellidos');
-            $table->string('numero');
-            $table->string('dni');
-            $table->string('nombre_producto');
-            $table->decimal('monto_total', 10, 2);
+            $table->string('nombres', 20);
+            $table->string('apellidos', 20);
+            $table->char('numero', 9);
+            $table->char('dni', 8);
+            $table->string('nombre_producto', 20);             $table->decimal('monto_total', 10, 2);
             $table->timestamp('fecha_hora_compra');
-             $table->timestamps();
+            $table->timestamps();
         });
     }
 

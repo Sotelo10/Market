@@ -74,9 +74,9 @@ class InventarioResource extends Resource
                                 ->required(),
 
                                 Forms\Components\TextInput::make('numero')
-                                    ->numeric()
-
-                                    ->required(),
+                ->required()
+                ->maxLength(9)
+                ->numeric(),
 
 
 

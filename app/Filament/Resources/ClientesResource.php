@@ -31,30 +31,28 @@ class ClientesResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('nombres')
-                            ->maxValue(50)
-                            ->required(),
-
-                            Forms\Components\TextInput::make('apellidos')
-                            ->maxValue(50)
-                            ->required(),
-
-                            Forms\Components\TextInput::make('numero')
-                                    ->numeric()
-
-                                    ->required(),
-
-                                    Forms\Components\TextInput::make('dni')
-                                    ->numeric()
-
-                                    ->required(),
-
-                                    Forms\Components\TextInput::make('nombre_producto')
-                                    ->maxValue(50)
-                                    ->required(),
-
-                                    Forms\Components\TextInput::make('monto_total')
-                            ->numeric()
-                            ->required(),
+                ->required()
+                ->maxLength(20),
+            Forms\Components\TextInput::make('apellidos')
+                ->required()
+                ->maxLength(20),
+                Forms\Components\TextInput::make('numero')
+    ->required()
+    ->maxLength(9)
+    ->minLength(9)
+    ->numeric(),
+Forms\Components\TextInput::make('dni')
+    ->required()
+    ->maxLength(8)
+    ->minLength(8)
+    ->numeric(),
+            Forms\Components\TextInput::make('nombre_producto')
+                ->required()
+                ->maxLength(20),
+            Forms\Components\TextInput::make('monto_total')
+                ->required()
+                ->numeric()
+                ->maxLength(10),
 
                             Forms\Components\TextInput::make('fecha_hora_compra')
                                 ->type('date')
